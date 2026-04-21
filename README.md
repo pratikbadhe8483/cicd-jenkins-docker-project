@@ -7,6 +7,7 @@ The goal of this project is to streamline the software delivery process by imple
 
 🏗️ Architecture
 Developer → GitHub → Jenkins Pipeline → Build → Test → Docker Build → Docker Run → User
+
 🛠️ Tech Stack
 CI/CD Tool: Jenkins (Pipeline/Groovy)
 Containerization: Docker
@@ -15,6 +16,7 @@ Code Quality: SonarQube
 Artifact Repository: JFrog Artifactory
 Build Tools: Maven / Gradle
 OS: Linux
+
 🔄 CI/CD Workflow
 Developer pushes code to GitHub
 Jenkins detects changes and triggers pipeline
@@ -26,6 +28,7 @@ Artifact is stored in JFrog Artifactory
 Docker image is built
 Container is deployed and exposed to users
 Acceptance test script validates deployment
+
 📦 Project Structure
 .
 ├── Dockerfile
@@ -34,6 +37,7 @@ Acceptance test script validates deployment
 ├── scripts/
 │   └── acceptance_test.sh
 ├── src/
+
 ⚙️ Setup & Installation
 1️⃣ Clone Repository
 git clone https://github.com/pratikbadhe8483/cicd-jenkins-docker-project.git
@@ -45,8 +49,8 @@ docker run -d -p 8080:80 cicd-app
 4️⃣ Access Application
 
 Open browser:
-
 http://localhost:8080
+
 🔧 Jenkins Setup (Using Docker)
 Run Jenkins Container
 docker run -d \
@@ -54,25 +58,26 @@ docker run -d \
   -p 50000:50000 \
   --name jenkins \
   jenkins/jenkins:lts
+
 Access Jenkins
 http://<server-ip>:8080
+
 ⚙️ Pipeline Configuration
 Create Pipeline Job in Jenkins
 Select Pipeline script from SCM
 Add GitHub repository URL
 Jenkins automatically executes Jenkinsfile
+
 📜 Jenkinsfile Explanation
 Build Stage → Compiles application
 Test Stage → Runs unit tests
 Docker Build → Creates Docker image
 Deploy Stage → Runs container
 Post Actions → Cleanup containers
+
 🧪 Acceptance Test Script
-
 Script verifies application availability:
-
 curl http://localhost:8080
-
 ✔ Ensures deployment success
 
 ⚠️ Challenges Faced
@@ -80,20 +85,21 @@ Docker permission issues → solved using user group configuration
 Git authentication errors → resolved using Personal Access Token
 Jenkins plugin configuration issues → fixed via proper setup
 Container port conflicts → resolved using correct port mapping
+
 📚 Key Learnings
 CI/CD pipeline automation using Jenkins
 Docker containerization and deployment
 Integration of SonarQube for code quality
 Artifact management using Artifactory
 End-to-end DevOps workflow implementation
+
 🌐 Output
-
 Application successfully deployed in a Docker container and accessible via:
-
 http://localhost:8080
+
 🔗 GitHub Repository
 https://github.com/pratikbadhe8483/cicd-jenkins-docker-project
-👨‍💻 Author
 
+👨‍💻 Author
 Pratik Badhe
 DevOps & Cloud Enthusiast
